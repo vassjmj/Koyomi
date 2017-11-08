@@ -104,6 +104,15 @@ final class DateModel: NSObject {
         setup()
     }
     
+    func displayFixedDate() {
+        var components = DateComponents()
+        components.day = 1
+        components.month = 1
+        components.year = 2018
+        currentDate = calendar.date(from: components)!
+        setup()
+    }
+    
     func dateString(in month: MonthType, withFormat format: String) -> String {
         let formatter: DateFormatter = .init()
         formatter.dateFormat = format
